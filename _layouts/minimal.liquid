@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title -%}
+        {{- page.title -}}
+      {%- else -%}
+        {{- site.first_name }}
+        {{ site.last_name -}}
+      {%- endif %}
+    </title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    {% if site.icon.size <= 4 %}
+      <link
+        rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>"
+      >
+    {% elsif site.icon != blank %}
+      <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url }}">
+    {% endif %}
+    <style>
+      :root {
+        --fg: #161616;
+        --muted: #61646b;
+        --link: #2563eb;
+        --border: #e6e6e6;
+        --bg: #ffffff;
+        font-size: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fg: #e8e8e8;
+          --muted: #9a9da3;
+          --link: #7aa6ff;
+          --border: #2a2a2a;
+          --bg: #111113;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.65;
+        font-size: 15px;
+      }
+      .wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 4.5rem 1.5rem 6rem;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        margin-bottom: 3rem;
+      }
+      .header img {
+        width: 128px;
+        height: 128px;
+        border-radius: 4px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      h1 {
+        font-size: 1.9rem;
+        margin: 0 0 0.35rem;
+      }
+      .role {
+        color: var(--muted);
+        margin: 0 0 0.5rem;
+        font-size: 0.98rem;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin: 0 0 0.6rem;
+      }
+      .links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+      .icon-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--muted);
+        text-decoration: none;
+      }
+      a.icon-item:hover {
+        color: var(--link);
+      }
+      .icon-item svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+      h2 {
+        font-size: 1.15rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.4rem;
+        margin: 2.5rem 0 1rem;
+      }
+      a {
+        color: var(--link);
+      }
+      ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+      li {
+        margin-bottom: 0.6rem;
+      }
+      .pub-list li {
+        margin-bottom: 1.1rem;
+        line-height: 1.55;
+      }
+      .pub-list .venue {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .placeholder {
+        color: var(--muted);
+        font-style: italic;
+      }
+      .edu-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.9rem;
+      }
+      .edu-item .when {
+        color: var(--muted);
+        white-space: nowrap;
+        font-size: 0.9rem;
+      }
+      footer {
+        margin-top: 4rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        {% if page.photo %}
+          <img src="{{ '/assets/img/' | append: page.photo | relative_url }}" alt="{{ site.first_name }} {{ site.last_name }}">
+        {% endif %}
+        <div>
+          <h1>
+            {{ site.first_name }}
+            {{ site.last_name }}
+          </h1>
+          {% if page.role %}
+            <p class="role">{{ page.role }}</p>
+          {% endif %}
+          {% if page.location %}
+            <p class="meta">📍 {{ page.location }}</p>
+          {% endif %}
+          {% assign socials = site.data.socials %}
+          <p class="links">
+            {% if socials.email %}
+              <span class="icon-item" title="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></path><polyline points="2,6 12,13 22,6" fill="none" stroke="currentColor" stroke-width="2"></polyline>
+                </svg>
+                <span>{{ socials.email | replace: '@', '[AT]' }}</span>
+              </span>
+            {% endif %}
+            {% if socials.github_username %}
+              <a
+                class="icon-item"
+                href="https://github.com/{{ socials.github_username }}"
+                target="_blank"
+                rel="noopener"
+                title="GitHub"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                  ></path>
+                </svg>
+              </a>
+            {% endif %}
+            {% if socials.scholar_userid %}
+              <a
+                class="icon-item"
+                href="https://scholar.google.com/citations?user={{ socials.scholar_userid }}"
+                target="_blank"
+                rel="noopener"
+                title="Google Scholar"
+                aria-label="Google Scholar"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"></path>
+                </svg>
+              </a>
+            {% endif %}
+            {% if socials.linkedin_username %}
+              <a
+                class="icon-item"
+                href="https://www.linkedin.com/in/{{ socials.linkedin_username }}"
+                target="_blank"
+                rel="noopener"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.368-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  ></path>
+                </svg>
+              </a>
+            {% endif %}
+            {% if socials.cv_pdf %}
+              <a class="icon-item" href="{{ socials.cv_pdf | relative_url }}" target="_blank" rel="noopener" title="CV" aria-label="CV">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path><polyline points="14,2 14,8 20,8" fill="none" stroke="currentColor" stroke-width="2"></polyline><line
+                    x1="8"
+                    y1="13"
+                    x2="16"
+                    y2="13"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></line><line x1="8" y1="17" x2="16" y2="17" stroke="currentColor" stroke-width="2"></line>
+                </svg>
+              </a>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      {{ content }}
+
+      <footer>
+        &copy; {{ 'now' | date: '%Y' }}
+        {{ site.first_name }}
+        {{ site.last_name }}
+      </footer>
+    </div>
+  </body>
+</html>
