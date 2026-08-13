@@ -10,13 +10,18 @@ location: State College, PA, US
 
 ## About Me
 
-Zehao Liu is presently a Ph.D. student in the College of Information Sciences and Technology at Pennsylvania State University, advised by Professor <a href="https://faculty.ist.psu.edu/vhonavar/index.htm">Vasant Honavar</a>. He earned his M.S. and B.Eng. degrees from Southwest Jiaotong University.
+Zehao Liu is presently a Ph.D. candidate in the College of Information Sciences and Technology at Pennsylvania State University, advised by Professor <a href="https://faculty.ist.psu.edu/vhonavar/index.htm">Vasant Honavar</a>. He earned his M.S. and B.Eng. degrees from Southwest Jiaotong University.
 
 His current research interests include post-training for large language models and multi-modal language models, reinforcement learning, on-policy distillation, and AI for healthcare.
 
 ## 📝 Publications and Preprints
 
 <ul class="pub-list">
+  <li>
+    <strong>PAC-Bayes Beyond Parameter Space: Behavioral Equivalence, Z-Information, and Exact Complexity Decomposition</strong><br />
+    Vasant G. Honavar, Satish Kumar Keshri, Neil Ashtekar, <strong>Zehao Liu</strong><br />
+    <span class="venue"><em>arXiv preprint arXiv:2608.11465</em>, 2026. <a href="https://arxiv.org/abs/2608.11465" target="_blank" rel="noopener">[arXiv]</a></span>
+  </li>
   <li>
     <strong>Restoring the Sweet Spot: Pass-Rate Weighted Self-Distillation for LLM Reasoning</strong><br />
     <strong>Zehao Liu</strong>, Yuanpu Cao, Jinghui Chen, Vasant G. Honavar<br />
