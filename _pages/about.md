@@ -10,7 +10,7 @@ location: State College, PA, US
 
 ## About Me
 
-Zehao Liu is presently a Ph.D. candidate in the College of Information Sciences and Technology at Pennsylvania State University, advised by Professor <a href="https://faculty.ist.psu.edu/vhonavar/index.htm">Vasant Honavar</a>. He earned his M.S. and B.Eng. degrees from Southwest Jiaotong University.
+Zehao Liu is presently a Ph.D. candidate in the College of Information Sciences and Technology at Pennsylvania State University, advised by Professor <a href="https://faculty.ist.psu.edu/vhonavar/index.htm">Vasant Honavar</a>. He earned his M.S. and B.Eng. degrees from Southwest Jiaotong University, Chengdu, China.
 
 His current research interests include post-training for large language models and multi-modal language models, reinforcement learning, on-policy distillation, and AI for healthcare.
 
@@ -30,7 +30,7 @@ His current research interests include post-training for large language models a
   <li>
     <strong>Skin-R1: Clinical Knowledge-Guided Dermatological Diagnosis Using Vision-Language Models</strong><br />
     <strong>Zehao Liu</strong>, Weijieying Ren, Jipeng Zhang, Tianxiang Zhao, Jingxi Zhu, Xiaoting Li, Vasant G. Honavar<br />
-    <span class="venue"><em>accepted to ECCV 2026</em>. <a href="https://arxiv.org/abs/2511.14900" target="_blank" rel="noopener">[arXiv]</a></span>
+    <span class="venue"><em>ECCV 2026</em>. <a href="https://arxiv.org/abs/2511.14900" target="_blank" rel="noopener">[arXiv]</a></span>
   </li>
   <li>
     <strong>A Comprehensive Survey of Electronic Health Record Modeling: From Deep Learning Approaches to Large Language Models</strong><br />
