@@ -18,6 +18,11 @@ His current research interests include post-training for large language models a
 
 <ul class="pub-list">
   <li>
+    <strong>Thinking Leakage: A Causal Audit of NoThink Post-Training in Hybrid Reasoning Models</strong><br />
+    <strong>Zehao Liu</strong>, Vasant G. Honavar<br />
+    <span class="venue"><em>arXiv preprint arXiv:2609.28682</em>, 2026. <a href="https://arxiv.org/abs/2609.28682" target="_blank" rel="noopener">[arXiv]</a></span>
+  </li>
+  <li>
     <strong>PAC-Bayes Beyond Parameter Space: Behavioral Equivalence, Z-Information, and Exact Complexity Decomposition</strong><br />
     Vasant G. Honavar, Satish Kumar Keshri, Neil Ashtekar, <strong>Zehao Liu</strong><br />
     <span class="venue"><em>arXiv preprint arXiv:2608.11465</em>, 2026. <a href="https://arxiv.org/abs/2608.11465" target="_blank" rel="noopener">[arXiv]</a></span>
